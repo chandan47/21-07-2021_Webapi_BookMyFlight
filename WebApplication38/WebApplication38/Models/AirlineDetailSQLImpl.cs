@@ -19,7 +19,7 @@ namespace WebApplication38.Models
 
         public AirlineDetails GetAirlinesById(int flightnumber)
         {
-            return _context.AirlineDetails.FirstOrDefault( i=> i.Id == flightnumber);
+            return _context.AirlineDetails.FirstOrDefault( i=> i.flightNumber == flightnumber);
         }
 
         public AirlineDetails AddAirline(AirlineDetails airline)
@@ -27,6 +27,28 @@ namespace WebApplication38.Models
             _context.Add(airline);
             _context.SaveChanges();
             return airline;
+        }
+        public List<AirlineDetails> GetSearchFlight(int? flightnumber, string? fromPlace,string? toPlace)
+        {
+            if (flightnumber.HasValue && flightnumber.Value>=0)
+            {
+                return _context.AirlineDetails.Where(i=>i.flightNumber == flightnumber && i.isBlocked == false).ToList();
+
+            }
+            else
+            {
+                 return _context.AirlineDetails.Where(i => i.fromPlace.ToLower() == fromPlace.ToLower() &&  i.toPlace.ToLower() == toPlace.ToLower() && i.isBlocked == false).ToList();
+            }
+        }
+        public void BlockAirline(int flightnumber)
+        {
+            var airLineDetail = _context.AirlineDetails.FirstOrDefault(i => i.flightNumber == flightnumber);
+            if (airLineDetail != null)
+            {
+                airLineDetail.isBlocked = !airLineDetail.isBlocked;
+                _context.Update(airLineDetail);
+                _context.SaveChanges();
+            }
         }
     }
 }

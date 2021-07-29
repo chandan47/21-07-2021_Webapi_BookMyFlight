@@ -3,7 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31025.194
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApplication38", "WebApplication38\WebApplication38.csproj", "{8A22002F-F598-4488-AB3F-C5ECC2E39A23}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebApplication38", "WebApplication38\WebApplication38.csproj", "{8A22002F-F598-4488-AB3F-C5ECC2E39A23}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Flight_Book", "Flight_Book\Flight_Book.csproj", "{E2C7C41E-A686-4485-B619-AEB037591017}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "APIGateway", "APIGateway\APIGateway.csproj", "{0EB22BE6-639D-44B8-8580-DE87D975B690}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +19,14 @@ Global
 		{8A22002F-F598-4488-AB3F-C5ECC2E39A23}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8A22002F-F598-4488-AB3F-C5ECC2E39A23}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8A22002F-F598-4488-AB3F-C5ECC2E39A23}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E2C7C41E-A686-4485-B619-AEB037591017}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E2C7C41E-A686-4485-B619-AEB037591017}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E2C7C41E-A686-4485-B619-AEB037591017}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E2C7C41E-A686-4485-B619-AEB037591017}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0EB22BE6-639D-44B8-8580-DE87D975B690}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0EB22BE6-639D-44B8-8580-DE87D975B690}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0EB22BE6-639D-44B8-8580-DE87D975B690}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0EB22BE6-639D-44B8-8580-DE87D975B690}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

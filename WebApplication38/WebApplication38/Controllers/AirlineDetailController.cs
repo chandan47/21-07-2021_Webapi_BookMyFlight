@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using WebApplication38.Models;
 namespace WebApplication38.Controllers
 {
-    [Route("api/[controller]")]
+    
     [ApiController]
     public class AirlineDetailController : ControllerBase
     {
@@ -29,10 +29,10 @@ namespace WebApplication38.Controllers
 
 
             [HttpGet]
-            [Route("api/[controller]/{id}")]
-            public AirlineDetails GetAirLinesById(int id)
+            [Route("api/[controller]/GetAirLinesById")]
+            public IActionResult GetAirLinesById(int FlightNumber)
             {
-                return IAirLineDetailRepository.GetAirlinesById(id);
+                return Ok( IAirLineDetailRepository.GetAirlinesById(FlightNumber));
             }
 
         [HttpPost]
@@ -50,6 +50,23 @@ namespace WebApplication38.Controllers
         //        airlines.Add(airline);
         //        return airline;
         //        }
+
+        [HttpGet]
+        [Route("api/[controller]/GetSearchFlight")]
+        public IActionResult GetSearchFlight(int? flightNumber,string? fromPlace, string? toPlace)
+        {
+            return Ok(IAirLineDetailRepository.GetSearchFlight(flightNumber, fromPlace,toPlace));
+        }
+
+        [HttpPut]
+        [Route("api/[controller]/BlockAirline/{flightNumber}/{isBlocked}")]
+
+        public IActionResult BlockAirline(int flightNumber)
+        {
+            IAirLineDetailRepository.BlockAirline(flightNumber);
+            return Ok();
+        }
+
     }
     }
 

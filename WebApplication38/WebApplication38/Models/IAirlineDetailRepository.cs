@@ -10,5 +10,8 @@ namespace WebApplication38.Models
         List<AirlineDetails> GetAllAirlines();
         AirlineDetails GetAirlinesById(int flightnumber);
         AirlineDetails AddAirline(AirlineDetails airline);
+
+        List<AirlineDetails> GetSearchFlight(int? flightnumber,string? fromPlace, string? toPlace);
+        void BlockAirline(int flightnumber);
     }
 }
